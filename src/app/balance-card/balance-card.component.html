@@ -1,0 +1,11 @@
+<div class="card-view">
+    <div class="d-flex">
+        <h5>Total Balance</h5>
+        <div><a href=""><i class="fa-solid fa-ellipsis"></i></a></div>
+    </div>
+    <div>
+        <p>{{balance?.total_balance | currency:'USD':'symbol'}}</p>
+        <progress id="file" value="{{balance?.payment_done_percentage}}" max="100"> 32% </progress>
+        <div class="d-flex progress-value"><label for="file">Monthly Payment limit</label> <span>{{balance?.payment_done_so_far | currency:'USD':'symbol' : '1.0-0'}}/{{balance?.monthly_payment_limit | currency:'USD':'symbol' : '1.0-0'}}</span></div>
+    </div>
+</div>
