@@ -1,0 +1,333 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin d-flex-center{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.d-flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+@mixin d-flex-between{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.btn-border{
+    border: 1px solid #F3F4F6;
+    padding: 10px 13px;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 5px;
+    margin: 3px;
+    font-size: 18px;
+}
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rethink Sans', sans-serif;
+    *{
+        box-sizing: border-box;
+    }
+}
+h1,h2,h3,h4,h5,h6{
+    color: #0B0A2E;
+}
+a{
+    color: #A4A7AD;
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.top-nav{
+    background: #000034 ;
+    padding: 15px;
+    @include d-flex-center;
+    position: sticky;
+    top: 0;
+    h6 {
+        color: #A9ACC4;
+        font-size: 14px;
+        margin: 0 15px;
+    }
+    a{
+        background: white;
+        border-radius: 5px;
+        padding: 7px 10px;
+        font-size: 12px
+    }
+}
+.dashboard-main{
+    @include d-flex-between;
+    align-items: flex-start;
+}
+app-left-nav {
+    flex: 0 0 17%;
+    .left-nav {
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        background: #F5F5F5;
+        width: 17%;
+        padding: 20px;
+        box-sizing: border-box;
+        .menu-div {
+            border-top: 1px solid #EFEFC8;
+            h4{
+                color: #A0A4AE;
+            }
+            a{
+                padding: 12px;
+                display: block;
+                margin-bottom: 5px;
+                &:hover ,&.active{
+                    background: white;
+                    color: #3F3E58;
+                    border-radius: 5px;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
+}
+
+app-right-side {
+    flex: 0 0 83%;
+    background: #F5F5F5
+}
+.card-view{
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, .04);
+    background: white;
+    border-radius: 12px;
+    margin: 0px 5px 10px;
+    padding: 12px;
+    h5{
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #1B1B4F;
+    }
+}
+.top-bar {
+    @include d-flex-between;
+    position: sticky;
+    top: 63px;
+    padding: 15px;
+    margin-top: 10px;
+    h2{
+        margin: 0;
+    }
+    input[type="search"] {
+        background: #F3F4F6;
+        border: 0;
+        padding: 9px 9px 9px 16px;
+        border-radius: 6px;
+        width: 47%;
+    }
+}
+.dashboard-inner{
+    @include d-flex-between;
+    align-items: flex-start;
+    .dashboard-right {
+        flex: 0 0 75%;
+        
+    }
+    
+    .dashboard-left {
+        flex: 0 0 25%;
+        
+    }
+}
+.card {
+    display: block;
+    width: 100%;
+    height: 140px;
+    background: #f5f5f5;
+    margin: 20px 0;
+}
+.action-outer {
+    border: 1px solid #f5f5f5;
+    padding: 15px 0;
+    border-radius: 6px;
+    li{
+        border-right: 1px solid #f5f5f5;
+        flex: 0 0 33.33%;
+        &:last-child{
+            border-right: none;
+        }
+        a{
+            text-align: center;
+            i,span{
+                display: block;
+                width: 100%;
+                color: #464451;
+                margin: 5px 0;
+            }
+           
+        }
+    }
+}
+
+progress#file {
+    width: 100%;
+}
+.plan-inner {
+    border: 1px solid #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    .btn-border{
+        margin-right: 15px;
+    }
+    h6 {
+        margin: 7px 0 0;
+        font-size: 16px;
+    }
+    .progress-value{
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    span {
+        font-size: 12px;
+    }
+}
+
+.mr-auto {margin-right: auto;}
+.browse-file-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #a4a7ad;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    p{
+        font-weight: 600;
+    }
+    i{
+        margin-right: 10px;
+    }
+    input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+.top-border {
+    border-top: 1px solid #f4f4f4;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+app-balance-card{
+    p{
+        font-size: 36px;
+        margin: 0;
+        font-weight: 800;
+    }
+    .progress-value{
+        color: #91A9A9; 
+        font-size: 14px;
+    }
+}
+
+
+app-grid-graph {
+    select#gap {
+        padding: 5px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+    
+    .graph-details{
+        margin: 15px;
+        h2 {
+            margin: 8px 0;
+        }
+        span{
+            color: #91A9A9;
+        }
+        p {
+            color: #91A9A9;
+            .red{
+                color: red;
+            }
+            .green{
+                color: green;
+            }
+            .yellow{
+                color: yellow;
+            }
+        }
+    } 
+}
+
+app-trans-history{
+    table {
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+        margin-top: 20px;
+        th{
+            background-color: #F5F6F8;
+            padding: 5px;
+        }
+        td{padding: 5px;}
+    }
+    
+    .btn-border {
+        align-items: center;
+        font-size: 14px;
+        padding: 7px 13px;
+        i{
+            margin-right: 10px;
+        }
+    }
+    input[type="search"] {
+        border: 1px solid #F3F4F6;
+        padding: 7px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .popup-container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+      
+    .popup-container.active {
+    display: block;
+    }
+
+    .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 998; /* Lower than popup */
+    }
+    
+    .overlay.active {
+    display: block;
+    }
+}

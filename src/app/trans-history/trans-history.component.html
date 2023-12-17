@@ -1,0 +1,45 @@
+<div class="card-view">
+    <div class="d-flex">
+        <h5>Transection history</h5>
+        <div class="d-flex">
+            <input type="search" placeholder="search">
+            <a href="" class="btn-border"><i class="fa-solid fa-filter"></i> Filter</a>
+            <a href="" class="btn-border"><i class="fa-solid fa-file-export"></i> Export</a>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Time</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactions">
+                    <td>{{ formatDate(transaction.date) }}</td>
+                    <td>{{ transaction.name }}</td>
+                    <td>{{ transaction.status }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.date | timeFormat }}</td>
+                    <td>{{ transaction.amount | currency:'USD':'symbol' }}</td>
+                    <a href="#" (click)="openPopup(transaction.name, transaction.type)">
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </a>
+                  </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="overlay" [ngClass]="{ 'active': isPopupOpen }"></div>
+<div class="popup-container" [ngClass]="{ 'active': isPopupOpen }">
+    <h2>Name: {{ selectedTransaction?.name }}</h2>
+    <p>Type: {{ selectedTransaction?.type }}</p>
+    <button (click)="closePopup()">Close</button>
+</div>
